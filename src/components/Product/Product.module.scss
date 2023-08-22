@@ -20,16 +20,6 @@
   font-size: $base-size * 1.5;
 }
 
-.optionLabel {
-  margin: $base-size 0;
-}
-
-.choices {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-
   button {
     border: none;
     color: inherit;
@@ -75,8 +65,6 @@
       margin-left: 0;
     }
   }
-
-}
 
 .sizes .choices button:hover{
   background: rgb(47, 53, 66);
