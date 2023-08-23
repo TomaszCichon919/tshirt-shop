@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Product.module.scss';
 import ProductImage from '../ProductImage/ProductImage.js';
 import ProductForm from '../ProductForm/ProductForm';
+import { useMemo } from 'react';
 
 
 const Product = props => {
@@ -14,12 +15,11 @@ const Product = props => {
 
 
  
-  function getPrice(){
+  const getPrice = useMemo (()=>{
   const getArtt = props.sizes.find((size) => size.name === currentSize);
-  //console.log('heyy', getArtt.additionalPrice);
   const finalPrice = getArtt.additionalPrice + props.basePrice;
   return finalPrice
-  }
+  }, [currentSize, props.basePrice, props.sizes]);
   
   
 
@@ -31,7 +31,7 @@ const Product = props => {
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>Price: {getPrice()}$</span>
+          <span className={styles.price}>Price: {getPrice}$</span>
         </header>
       <ProductForm title={props.title} currentColor={currentColor} setCurrentColor = {setCurrentColor} getPrice = {getPrice} 
       setCurrentSize = {setCurrentSize} getPrize = {getPrice} sizes = {props.sizes} 

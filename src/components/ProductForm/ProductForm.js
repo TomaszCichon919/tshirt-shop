@@ -8,7 +8,7 @@ const ProductForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('name', props.title);
-        console.log('price', props.getPrice());
+        console.log('price', props.getPrice);
         console.log('size', props.currentSize);
         console.log('color', props.currentColor);
       }
